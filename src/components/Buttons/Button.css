@@ -1,0 +1,33 @@
+button{
+    border-radius: 100px 100px 100px 100px !important;
+    height: 49px;
+}
+
+button:focus{
+    outline: 0 !important;
+}
+
+.openModalButton{
+    width: 138px;
+    background-color: #324BFF;
+    margin-left: auto;
+}
+
+.deleteButton{
+    width: 138px;
+    background-color: #FFFFFF;
+    color: #324BFF;
+    border: 1px solid #324BFF;
+    margin-right: auto;
+}
+
+.returnButton{
+    width: 81px;
+    background-color: #FFFFFF;
+    color: #324BFF;
+    border: 1px solid #324BFF;
+}
+
+.returnSvg{
+    text-align: center;
+}

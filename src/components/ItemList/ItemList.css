@@ -1,0 +1,9 @@
+#itemList{
+    width: 100%;
+    height: fit-content;
+    background-color: #F7F7F7;
+    border: 1px solid #CCCCCC;
+    margin: 35px auto;
+    box-sizing: border-box;
+    padding: 11px;
+}

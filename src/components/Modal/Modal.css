@@ -1,0 +1,52 @@
+.modal{
+    width: 700px;
+    height: fit-content;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+    padding: 50px;
+    filter: drop-shadow(0px 5px 12px #0000001F);
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    z-index: 2;
+}
+
+
+.label{
+    height: fit-content;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.textInput{
+    height: 60px;
+    width: 100%;
+    background-color: #F7F7F7;
+    color: #333333;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 20px 0px 20px;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+.cancelButton{
+    width: 138px;
+    background-color: #FFFFFF;
+    color: #324BFF;
+    border: 1px solid #324BFF;
+}
+
+.addButton{
+    width: 138px;
+    background-color: #324BFF;
+    margin-left: auto;
+}
