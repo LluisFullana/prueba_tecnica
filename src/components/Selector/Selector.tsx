@@ -1,4 +1,4 @@
-import { ButtonTypes, IClickProps } from '../../interfaces/Interfaces';
+import { ButtonTypes } from '../../interfaces/Interfaces';
 import { Button } from '../Button/Button';
 import { ItemList } from '../ItemList/ItemList';
 import { ReturnSvg } from './ReturnSvg';
