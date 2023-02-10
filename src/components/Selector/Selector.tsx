@@ -5,10 +5,10 @@ import { ReturnSvg } from './ReturnSvg';
 import { ISelectorProps } from './Types';
 import './Selector.css';
 
-export const Selector = (props: ISelectorProps) => {
+export const Selector = ({items, actionFunction}: ISelectorProps) => {
 
   const handleActions = ({ actionType, item = { id: 0, name: "NA" } }: IClickProps) => {
-    props.actionFunction({ actionType: actionType, item: item });
+    actionFunction({ actionType: actionType, item: item });
   }
 
   return (
@@ -19,7 +19,7 @@ export const Selector = (props: ISelectorProps) => {
         elit mus primis nec inceptos. Lacinia habitasse arcu molestie maecenas cursus quam nunc,
         hendrerit posuere augue fames dictumst placerat porttitor, dis mi pharetra vestibulum venenatis phasellus.
       </div>
-      <ItemList items={props.items} selectFunction={handleActions} />
+      <ItemList items={items} selectFunction={handleActions} />
       <div className='buttonsRow'>
         <Button type={ButtonTypes.RETURN} onClick={handleActions}> <ReturnSvg /> </Button>
         <Button type={ButtonTypes.DELETE} onClick={handleActions}> DELETE </Button>

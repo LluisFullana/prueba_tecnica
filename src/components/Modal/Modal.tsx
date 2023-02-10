@@ -4,7 +4,7 @@ import { Button } from '../Button/Button';
 import { IModalProps } from './Types';
 import './Modal.css';
 
-export const Modal = (props: IModalProps) => {
+export const Modal = ({ actionFunction, showModalState }: IModalProps) => {
     const [inputValue, setInputValue] = useState("");
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -12,13 +12,16 @@ export const Modal = (props: IModalProps) => {
     }
 
     const handleClick = (clickProps: IClickProps) => {
-        props.actionFunction({ actionType: clickProps.actionType, item: { id: 0, name: inputValue } });
+        actionFunction({ actionType: clickProps.actionType, item: { id: 0, name: inputValue } });
+        if (clickProps.actionType === ButtonTypes.ADD) {
+            setInputValue("");
+        }
     }
 
     return (
-        <div id='modal' className={props.showModalState}>
+        <div id='modal' className={showModalState}>
             <div className='label'>Add item to list</div>
-            <input className='textInput' type="text" placeholder='Type the text here...' onChange={handleChange} autoFocus />
+            <input className='textInput' type="text" placeholder='Type the text here...' value={inputValue} onChange={handleChange} />
             <div className='buttonsRow'>
                 <Button type={ButtonTypes.ADD} onClick={handleClick}> ADD </Button>
                 <Button type={ButtonTypes.CLOSEMODAL} onClick={handleClick}> CANCEL </Button>
