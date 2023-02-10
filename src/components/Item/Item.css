@@ -18,10 +18,10 @@
     line-height:40px;
     box-sizing: border-box;
     padding-left: 15px;
-    background-color: #324BFF;
+    background-color: var(--mainColor);
     color: #FFFFFF;
 }
 
 .item:hover{
-    border: 1px solid #324BFF;
+    border: 1px solid var(--mainColor);
 }

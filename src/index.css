@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
 
 :root {
+  --mainFont: 'Montserrat', sans-serif;
+  --mainColor: #324BFF;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
