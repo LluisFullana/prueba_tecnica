@@ -9,12 +9,12 @@ export interface IClickProps {
 }
 
 export enum ButtonTypes {
-    ADD,
-    DELETE,
-    RETURN,
-    OPENMODAL,
-    CLOSEMODAL,
-    SELECTITEM
+    ADD = "addButton",
+    DELETE = "deleteButton",
+    RETURN = "returnButton",
+    OPENMODAL = "openModalButton",
+    CLOSEMODAL = "cancelButton",
+    SELECTITEM = "selectedItem"
 }
 
 export enum ModalState {
