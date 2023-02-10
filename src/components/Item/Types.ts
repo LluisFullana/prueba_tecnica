@@ -1,6 +1,6 @@
 export interface IItemProps {
     id: number,
-    name: string,
+    itemName: string,
     selectFunction: Function
   }
   

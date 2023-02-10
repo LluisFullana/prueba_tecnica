@@ -18,7 +18,7 @@ export const Modal = (props: IModalProps) => {
   return (
     <div id='modal' className={props.showModalState}>
         <div className='label'>Add item to list</div>
-            <input className='textInput' type="text" placeholder='Type the text here...' onChange={handleChange}/>
+            <input className='textInput' type="text" placeholder='Type the text here...' onChange={handleChange} autoFocus />
         <div className='buttonsRow'>
             <Button type={ButtonTypes.ADD} onClick={handleClick}> ADD </Button>
             <Button type={ButtonTypes.CLOSEMODAL} onClick={handleClick}> CANCEL </Button>

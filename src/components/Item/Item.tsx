@@ -8,10 +8,10 @@ export const Item = (props: IItemProps) => {
 
   const handleSelected = () => {
     selected === "item" ? setSelected("selectedItem") : setSelected("item");
-    props.selectFunction({actionType: ButtonTypes.SELECTITEM, item: {id: props.id, name: props.name}});
+    props.selectFunction({actionType: ButtonTypes.SELECTITEM, item: {id: props.id, name: props.itemName}});
   }
 
   return (
-    <div className={selected} onClick={handleSelected}>{props.name}</div>
+    <div className={selected} onClick={handleSelected}>{props.itemName}</div>
   )
 }
