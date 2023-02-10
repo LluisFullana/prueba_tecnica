@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import './App.css'
 import { Modal } from './components/Modal/Modal'
 import { Selector } from './components/Selector/Selector'
 import { ButtonTypes, IClickProps, IItem, ModalState } from './interfaces/Interfaces'
+import './App.css'
 
 function App() {
   const initialState = [{ id: 0, name: "Item 1" }, { id: 1, name: "Item 2" }, { id: 2, name: "Item 3" }, { id: 3, name: "Item 4" }];

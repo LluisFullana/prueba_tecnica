@@ -6,11 +6,6 @@ import { ISelectorProps } from './Types';
 import './Selector.css';
 
 export const Selector = ({items, actionFunction}: ISelectorProps) => {
-
-  const handleActions = ({ actionType, item = { id: 0, name: "NA" } }: IClickProps) => {
-    actionFunction({ actionType: actionType, item: item });
-  }
-
   return (
     <div className='selector'>
       <div className='title'>This is a technical proof</div>
@@ -19,11 +14,11 @@ export const Selector = ({items, actionFunction}: ISelectorProps) => {
         elit mus primis nec inceptos. Lacinia habitasse arcu molestie maecenas cursus quam nunc,
         hendrerit posuere augue fames dictumst placerat porttitor, dis mi pharetra vestibulum venenatis phasellus.
       </div>
-      <ItemList items={items} selectFunction={handleActions} />
+      <ItemList items={items} selectFunction={actionFunction} />
       <div className='buttonsRow'>
-        <Button type={ButtonTypes.RETURN} onClick={handleActions}> <ReturnSvg /> </Button>
-        <Button type={ButtonTypes.DELETE} onClick={handleActions}> DELETE </Button>
-        <Button type={ButtonTypes.OPENMODAL} onClick={handleActions}> ADD </Button>
+        <Button type={ButtonTypes.RETURN} onClick={actionFunction}> <ReturnSvg /> </Button>
+        <Button type={ButtonTypes.DELETE} onClick={actionFunction}> DELETE </Button>
+        <Button type={ButtonTypes.OPENMODAL} onClick={actionFunction}> ADD </Button>
       </div>
     </div>
   )
