@@ -7,7 +7,6 @@ import './App.css'
 function App() {
   const initialState = [{ id: 0, name: "Item 1" }, { id: 1, name: "Item 2" }, { id: 2, name: "Item 3" }, { id: 3, name: "Item 4" }];
   const [showModal, setShowModal] = useState(ModalState.CLOSED);
-  
   const [selectedItems, setSelectedItems] = useState<IItem[]>([]);
   const [lastItemsState, setLastItemsState] = useState<IItem[][]>([initialState]);
   const [items, setItems] = useState<IItem[]>(initialState);
