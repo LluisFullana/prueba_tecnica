@@ -1,25 +1,28 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import { Modal } from './components/Modal/Modal'
 import { Selector } from './components/Selector/Selector'
 import { ButtonTypes, IClickProps, IItem, ModalState } from './interfaces/Interfaces'
 
 function App() {
-  const initialState = [{ id: 0, name: "Item 1"},{id: 1, name: "Item 2"},{id: 2, name: "Item 3"},{id: 3, name: "Item 4"}];
+  const initialState = [{ id: 0, name: "Item 1" }, { id: 1, name: "Item 2" }, { id: 2, name: "Item 3" }, { id: 3, name: "Item 4" }];
   const [showModal, setShowModal] = useState(ModalState.CLOSED);
   const [itemId, setItemId] = useState(10);
   const [selectedItems, setSelectedItems] = useState<IItem[]>([]);
   const [lastItemsState, setLastItemsState] = useState<IItem[][]>([initialState]);
   const [items, setItems] = useState<IItem[]>(initialState);
 
-  const handleActions = ({ actionType, item: item = {id: 0, name: "NA"}}: IClickProps) => {
+  const handleActions = ({ actionType, item: item = { id: 0, name: "NA" } }: IClickProps) => {
     switch (actionType) {
+      
       case ButtonTypes.CLOSEMODAL:
         setShowModal(ModalState.CLOSED);
         break;
+
       case ButtonTypes.OPENMODAL:
         setShowModal(ModalState.OPENED);
         break;
+
       case ButtonTypes.ADD:
         item.id = itemId;
         setItems([...items, item]);
@@ -27,6 +30,7 @@ function App() {
         setLastItemsState([...lastItemsState, items]);
         setShowModal(ModalState.CLOSED);
         break;
+
       case ButtonTypes.DELETE:
         var temporalItems = [...items]
         selectedItems.forEach(selectedItem => {
@@ -37,6 +41,7 @@ function App() {
         setItems(temporalItems);
         setSelectedItems([]);
         break;
+
       case ButtonTypes.RETURN:
         if (lastItemsState.length > 1) {
           let lastState = lastItemsState.pop();
@@ -45,16 +50,17 @@ function App() {
           }
         }
         break;
-        case ButtonTypes.SELECTITEM:
-          let index = selectedItems.findIndex(selectedItem => selectedItem.id == item.id);
-          if (index === -1) {
-            setSelectedItems([...selectedItems, item]);
-          } else {
-            var aux = [...selectedItems];
-            aux.splice(index, 1);
-            setSelectedItems(aux);
-          }     
-          break;
+
+      case ButtonTypes.SELECTITEM:
+        let index = selectedItems.findIndex(selectedItem => selectedItem.id == item.id);
+        if (index === -1) {
+          setSelectedItems([...selectedItems, item]);
+        } else {
+          var aux = [...selectedItems];
+          aux.splice(index, 1);
+          setSelectedItems(aux);
+        }
+        break;
     }
   }
 
