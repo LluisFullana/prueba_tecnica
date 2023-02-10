@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-#shadowId{
+#shadowId {
   background-color: #0000001A;
   position: absolute;
   left: 0;
@@ -16,6 +16,6 @@
   transition: height 0.5s;
 }
 
-#shadowId.opened{
+#shadowId.opened {
   height: 100vh;
 }

@@ -1,6 +1,6 @@
 import { IItem } from "../../interfaces/Interfaces";
 
 export interface IItemListProps {
-    items: IItem[],
-    selectFunction: Function
-  }
+  items: IItem[],
+  selectFunction: Function
+}

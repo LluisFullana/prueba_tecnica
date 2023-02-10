@@ -8,4 +8,3 @@ export enum SelectedItem {
   SELECTED = "selectedItem",
   UNSELECTED = "item"
 }
-  

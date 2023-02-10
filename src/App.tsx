@@ -14,7 +14,7 @@ function App() {
 
   const handleActions = ({ actionType, item: item = { id: 0, name: "NA" } }: IClickProps) => {
     switch (actionType) {
-      
+
       case ButtonTypes.CLOSEMODAL:
         setShowModal(ModalState.CLOSED);
         break;

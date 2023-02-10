@@ -1,19 +1,19 @@
-button{
+button {
     border-radius: 100px 100px 100px 100px !important;
     height: 49px;
 }
 
-button:focus{
+button:focus {
     outline: 0 !important;
 }
 
-.openModalButton{
+.openModalButton {
     width: 138px;
     background-color: var(--mainColor);
     margin-left: auto;
 }
 
-.deleteButton{
+.deleteButton {
     width: 138px;
     background-color: #FFFFFF;
     color: var(--mainColor);
@@ -21,26 +21,26 @@ button:focus{
     margin-right: auto;
 }
 
-.returnButton{
+.returnButton {
     width: 81px;
     background-color: #FFFFFF;
     color: var(--mainColor);
     border: 1px solid var(--mainColor);
 }
 
-.cancelButton{
+.cancelButton {
     width: 138px;
     background-color: #FFFFFF;
     color: var(--mainColor);
     border: 1px solid var(--mainColor);
 }
 
-.addButton{
+.addButton {
     width: 138px;
     background-color: var(--mainColor);
     margin-left: auto;
 }
 
-.returnSvg{
+.returnSvg {
     text-align: center;
 }

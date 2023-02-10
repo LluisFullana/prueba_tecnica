@@ -1,4 +1,4 @@
-#modal{
+#modal {
     width: 700px;
     height: fit-content;
     background-color: #FFFFFF;
@@ -10,26 +10,26 @@
     position: absolute;
     top: 0;
     margin-top: -276px;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     z-index: 2;
     transition: margin 0.45s;
 }
 
-#modal.opened{
+#modal.opened {
     margin-top: 50px;
 }
 
-.label{
+.label {
     height: fit-content;
     width: 100%;
     text-align: left;
     font-size: 18px;
 }
 
-.textInput{
+.textInput {
     height: 60px;
     width: 100%;
     background-color: #F7F7F7;
