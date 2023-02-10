@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import { ButtonTypes, IClickProps } from '../../interfaces/Interfaces';
-import { Button } from '../Buttons/Button';
+import { Button } from '../Button/Button';
 import { IModalProps } from './Types';
 import './Modal.css';
 
@@ -16,7 +16,7 @@ export const Modal = (props: IModalProps) => {
     }
 
   return (
-    <div className='modal'>
+    <div id='modal' className={props.showModalState}>
         <div className='label'>Add item to list</div>
             <input className='textInput' type="text" placeholder='Type the text here...' onChange={handleChange}/>
         <div className='buttonsRow'>

@@ -16,3 +16,8 @@ export enum ButtonTypes {
     CLOSEMODAL,
     SELECTITEM
 }
+
+export enum ModalState {
+    OPENED = "opened",
+    CLOSED = ""
+}
