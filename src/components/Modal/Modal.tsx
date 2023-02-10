@@ -6,15 +6,17 @@ import './Modal.css';
 
 export const Modal = ({ actionFunction, showModalState }: IModalProps) => {
     const [inputValue, setInputValue] = useState("");
+    const [itemId, setItemId] = useState(10);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setInputValue(event.target.value);
     }
 
     const handleClick = (clickProps: IClickProps) => {
-        actionFunction({ actionType: clickProps.actionType, item: { id: 0, name: inputValue } });
+        actionFunction({ actionType: clickProps.actionType, item: { id: itemId, name: inputValue } });
         if (clickProps.actionType === ButtonTypes.ADD) {
             setInputValue("");
+            setItemId(itemId + 1);
         }
     }
 
