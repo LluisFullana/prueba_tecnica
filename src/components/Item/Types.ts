@@ -1,7 +1,9 @@
+import { ReactNode } from "react";
+
 export interface IItemProps {
   id: number,
-  itemName: string,
-  selectFunction: Function
+  selectFunction: Function,
+  children: ReactNode
 }
 
 export enum SelectedItem {
