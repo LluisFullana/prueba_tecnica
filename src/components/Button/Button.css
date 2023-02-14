@@ -1,46 +1,46 @@
 button {
-    border-radius: 100px 100px 100px 100px !important;
-    height: 49px;
+  border-radius: 100px 100px 100px 100px !important;
+  height: 49px;
 }
 
 button:focus {
-    outline: 0 !important;
+  outline: 0 !important;
 }
 
 .openModalButton {
-    width: 138px;
-    background-color: var(--mainColor);
-    margin-left: auto;
+  width: 138px;
+  background-color: var(--mainColor);
+  margin-left: auto;
 }
 
 .deleteButton {
-    width: 138px;
-    background-color: #FFFFFF;
-    color: var(--mainColor);
-    border: 1px solid var(--mainColor);
-    margin-right: auto;
+  width: 138px;
+  background-color: #ffffff;
+  color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  margin-right: auto;
 }
 
 .returnButton {
-    width: 81px;
-    background-color: #FFFFFF;
-    color: var(--mainColor);
-    border: 1px solid var(--mainColor);
+  width: 81px;
+  background-color: #ffffff;
+  color: var(--mainColor);
+  border: 1px solid var(--mainColor);
 }
 
 .cancelButton {
-    width: 138px;
-    background-color: #FFFFFF;
-    color: var(--mainColor);
-    border: 1px solid var(--mainColor);
+  width: 138px;
+  background-color: #ffffff;
+  color: var(--mainColor);
+  border: 1px solid var(--mainColor);
 }
 
 .addButton {
-    width: 138px;
-    background-color: var(--mainColor);
-    margin-left: auto;
+  width: 138px;
+  background-color: var(--mainColor);
+  margin-left: auto;
 }
 
 .returnSvg {
-    text-align: center;
+  text-align: center;
 }

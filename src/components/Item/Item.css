@@ -1,28 +1,28 @@
 .item {
-    width: 100%;
-    height: 40px;
-    font-size: 18px;
-    text-align: left;
-    justify-content: center;
-    line-height: 40px;
-    box-sizing: border-box;
-    padding-left: 15px;
-    cursor: pointer;
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  text-align: left;
+  justify-content: center;
+  line-height: 40px;
+  box-sizing: border-box;
+  padding-left: 15px;
+  cursor: pointer;
 }
 
 .selectedItem {
-    width: 100%;
-    height: 40px;
-    font-size: 18px;
-    text-align: left;
-    justify-content: center;
-    line-height: 40px;
-    box-sizing: border-box;
-    padding-left: 15px;
-    background-color: var(--mainColor);
-    color: #FFFFFF;
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  text-align: left;
+  justify-content: center;
+  line-height: 40px;
+  box-sizing: border-box;
+  padding-left: 15px;
+  background-color: var(--mainColor);
+  color: #ffffff;
 }
 
 .item:hover {
-    border: 1px solid var(--mainColor);
+  border: 1px solid var(--mainColor);
 }

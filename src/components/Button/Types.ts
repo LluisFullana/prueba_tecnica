@@ -1,9 +1,8 @@
-import { ReactNode } from "react"
-import { ButtonTypes } from "../../interfaces/Interfaces"
+import { ReactNode } from "react";
+import { ButtonTypes } from "../../interfaces/Interfaces";
 
 export interface IButtonProps {
-    type: ButtonTypes,
-    onClick: Function,
-    children: ReactNode
+  type: ButtonTypes;
+  onClick: Function;
+  children: ReactNode;
 }
-
