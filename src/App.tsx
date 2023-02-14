@@ -8,6 +8,7 @@ import {
   ModalState,
 } from "./interfaces/Interfaces";
 import "./App.css";
+import { deleteItems, selectItemHelper } from "./ActionHelpers";
 
 function App() {
   const initialState = [
@@ -44,37 +45,30 @@ function App() {
 
       case ButtonTypes.DELETE:
         var temporalItems = [...items];
-        selectedItems.forEach((selectedItem) => {
-          let index = temporalItems.findIndex(
-            (temporalItem) => temporalItem.id == selectedItem.id
-          );
-          temporalItems.splice(index, 1);
-        });
         setLastItemsState([...lastItemsState, items]);
-        setItems(temporalItems);
+        setItems(deleteItems(temporalItems, selectedItems));
         setSelectedItems([]);
         break;
 
       case ButtonTypes.RETURN:
         if (lastItemsState.length > 1) {
           let lastState = lastItemsState.pop();
-          if (lastState != undefined) {
+          if (lastState) {
             setItems(lastState);
           }
         }
         break;
 
       case ButtonTypes.SELECTITEM:
-        let index = selectedItems.findIndex(
-          (selectedItem) => selectedItem.id == item.id
-        );
-        if (index === -1) {
-          setSelectedItems([...selectedItems, item]);
+        let temporalSelectedItems = selectItemHelper(selectedItems, item);
+        if (temporalSelectedItems) {
+          setSelectedItems(temporalSelectedItems);
         } else {
-          var aux = [...selectedItems];
-          aux.splice(index, 1);
-          setSelectedItems(aux);
+          setSelectedItems([...selectedItems, item]);
         }
+        break;
+      default:
+        console.log("Default case action");
         break;
     }
   };

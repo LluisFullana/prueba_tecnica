@@ -1,6 +1,12 @@
 button {
-  border-radius: 100px 100px 100px 100px !important;
+  border-radius: 100px 100px 100px 100px;
   height: 49px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 button:focus {

@@ -1,4 +1,4 @@
-export const ReturnSvg = () => {
+export const ReturnIcon = () => {
   return (
     <div className="returnSvg">
       <svg

@@ -1,7 +1,7 @@
 import { ButtonTypes } from "../../interfaces/Interfaces";
 import { Button } from "../Button/Button";
 import { ItemList } from "../ItemList/ItemList";
-import { ReturnSvg } from "./ReturnSvg";
+import { ReturnIcon } from "./ReturnIcon";
 import { ISelectorProps } from "./Types";
 import "./Selector.css";
 
@@ -18,16 +18,13 @@ export const Selector = ({ items, actionFunction }: ISelectorProps) => {
       <ItemList items={items} selectFunction={actionFunction} />
       <div className="buttonsRow">
         <Button type={ButtonTypes.RETURN} onClick={actionFunction}>
-          {" "}
-          <ReturnSvg />{" "}
+          <ReturnIcon />
         </Button>
         <Button type={ButtonTypes.DELETE} onClick={actionFunction}>
-          {" "}
-          DELETE{" "}
+          DELETE
         </Button>
         <Button type={ButtonTypes.OPENMODAL} onClick={actionFunction}>
-          {" "}
-          ADD{" "}
+          ADD
         </Button>
       </div>
     </div>
