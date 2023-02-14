@@ -67,6 +67,7 @@ function App() {
           setSelectedItems([...selectedItems, item]);
         }
         break;
+
       default:
         console.log("Default case action");
         break;
