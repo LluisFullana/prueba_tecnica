@@ -1,5 +1,5 @@
-import { ButtonTypes } from "../../interfaces/Interfaces";
-import { Button } from "../Button/Button";
+import { ButtonAction } from "../../interfaces/Interfaces";
+import { Button } from "../Buttons/Button";
 import { ItemList } from "../ItemList/ItemList";
 import { ReturnIcon } from "./ReturnIcon";
 import { ISelectorProps } from "./Types";
@@ -17,13 +17,13 @@ export const Selector = ({ items, actionFunction }: ISelectorProps) => {
       </div>
       <ItemList items={items} selectFunction={actionFunction} />
       <div className="buttonsRow">
-        <Button type={ButtonTypes.RETURN} onClick={actionFunction}>
+        <Button action={ButtonAction.RETURN} onClick={actionFunction}>
           <ReturnIcon />
         </Button>
-        <Button type={ButtonTypes.DELETE} onClick={actionFunction}>
+        <Button action={ButtonAction.DELETE} onClick={actionFunction}>
           DELETE
         </Button>
-        <Button type={ButtonTypes.OPENMODAL} onClick={actionFunction}>
+        <Button action={ButtonAction.OPENMODAL} onClick={actionFunction}>
           ADD
         </Button>
       </div>

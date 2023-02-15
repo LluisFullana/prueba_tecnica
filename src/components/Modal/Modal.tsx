@@ -1,13 +1,6 @@
-import {
-  ChangeEvent,
-  DetailedHTMLProps,
-  FormEvent,
-  FormHTMLAttributes,
-  useEffect,
-  useState,
-} from "react";
-import { ButtonTypes, IClickProps } from "../../interfaces/Interfaces";
-import { Button } from "../Button/Button";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ButtonAction, IClickProps } from "../../interfaces/Interfaces";
+import { Button } from "../Buttons/Button";
 import { IModalProps } from "./Types";
 import "./Modal.css";
 
@@ -31,7 +24,7 @@ export const Modal = ({ actionFunction, showModalState }: IModalProps) => {
       actionType: clickProps.actionType,
       item: { id: itemId, name: inputValue },
     });
-    if (clickProps.actionType === ButtonTypes.ADD) {
+    if (clickProps.actionType === ButtonAction.ADD) {
       setItemId(itemId + 1);
     }
   };
@@ -51,16 +44,13 @@ export const Modal = ({ actionFunction, showModalState }: IModalProps) => {
           onChange={handleChange}
           required
           minLength={1}
+          autoComplete="off"
         />
         <div className="buttonsRow">
-          <Button type={ButtonTypes.ADD} onClick={handleClick}>
+          <Button type="submit" action={ButtonAction.ADD} onClick={handleClick}>
             ADD
           </Button>
-          <Button
-            type={ButtonTypes.CLOSEMODAL}
-            onClick={handleClick}
-            submitType={"button"}
-          >
+          <Button action={ButtonAction.CLOSEMODAL} onClick={handleClick}>
             CANCEL
           </Button>
         </div>

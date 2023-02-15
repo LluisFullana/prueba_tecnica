@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ButtonTypes } from "../../interfaces/Interfaces";
+import { ButtonAction } from "../../interfaces/Interfaces";
 import { IItemProps, SelectedItem } from "./Types";
 import "./Item.css";
 
@@ -11,7 +11,7 @@ export const Item = (props: IItemProps) => {
       ? setSelected(SelectedItem.SELECTED)
       : setSelected(SelectedItem.UNSELECTED);
     props.selectFunction({
-      actionType: ButtonTypes.SELECTITEM,
+      actionType: ButtonAction.SELECTITEM,
       item: { id: props.id, name: props.children },
     });
   };

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Modal } from "./components/Modal/Modal";
 import { Selector } from "./components/Selector/Selector";
 import {
-  ButtonTypes,
+  ButtonAction,
   IClickProps,
   IItem,
   ModalState,
@@ -29,15 +29,15 @@ function App() {
     item: item = { id: 0, name: "NA" },
   }: IClickProps) => {
     switch (actionType) {
-      case ButtonTypes.CLOSEMODAL:
+      case ButtonAction.CLOSEMODAL:
         setShowModal(ModalState.CLOSED);
         break;
 
-      case ButtonTypes.OPENMODAL:
+      case ButtonAction.OPENMODAL:
         setShowModal(ModalState.OPENED);
         break;
 
-      case ButtonTypes.ADD:
+      case ButtonAction.ADD:
         if (item.name.trim() !== "") {
           setItems([...items, item]);
           setLastItemsState([...lastItemsState, items]);
@@ -45,14 +45,14 @@ function App() {
         }
         break;
 
-      case ButtonTypes.DELETE:
+      case ButtonAction.DELETE:
         var temporalItems = [...items];
         setLastItemsState([...lastItemsState, items]);
         setItems(deleteItems(temporalItems, selectedItems));
         setSelectedItems([]);
         break;
 
-      case ButtonTypes.RETURN:
+      case ButtonAction.RETURN:
         if (lastItemsState.length > 1) {
           let lastState = lastItemsState.pop();
           if (lastState) {
@@ -61,7 +61,7 @@ function App() {
         }
         break;
 
-      case ButtonTypes.SELECTITEM:
+      case ButtonAction.SELECTITEM:
         let temporalSelectedItems = selectItemHelper(selectedItems, item);
         if (temporalSelectedItems) {
           setSelectedItems(temporalSelectedItems);
@@ -83,7 +83,7 @@ function App() {
         <div
           id="shadowId"
           className={showModal}
-          onClick={() => handleActions({ actionType: ButtonTypes.CLOSEMODAL })}
+          onClick={() => handleActions({ actionType: ButtonAction.CLOSEMODAL })}
         ></div>
         <Selector items={items} actionFunction={handleActions} />
       </>

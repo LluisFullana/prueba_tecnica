@@ -4,11 +4,11 @@ export interface IItem {
 }
 
 export interface IClickProps {
-  actionType: ButtonTypes;
+  actionType: ButtonAction;
   item?: IItem;
 }
 
-export enum ButtonTypes {
+export enum ButtonAction {
   ADD = "addButton",
   DELETE = "deleteButton",
   RETURN = "returnButton",
