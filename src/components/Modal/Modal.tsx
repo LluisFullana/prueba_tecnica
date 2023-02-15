@@ -1,4 +1,11 @@
-import { ChangeEvent, useState } from "react";
+import {
+  ChangeEvent,
+  DetailedHTMLProps,
+  FormEvent,
+  FormHTMLAttributes,
+  useEffect,
+  useState,
+} from "react";
 import { ButtonTypes, IClickProps } from "../../interfaces/Interfaces";
 import { Button } from "../Button/Button";
 import { IModalProps } from "./Types";
@@ -8,9 +15,16 @@ export const Modal = ({ actionFunction, showModalState }: IModalProps) => {
   const [inputValue, setInputValue] = useState("");
   const [itemId, setItemId] = useState(10);
 
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+  };
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
+
+  useEffect(() => {
+    setInputValue("");
+  }, [itemId]);
 
   const handleClick = (clickProps: IClickProps) => {
     actionFunction({
@@ -18,31 +32,39 @@ export const Modal = ({ actionFunction, showModalState }: IModalProps) => {
       item: { id: itemId, name: inputValue },
     });
     if (clickProps.actionType === ButtonTypes.ADD) {
-      setInputValue("");
       setItemId(itemId + 1);
     }
   };
 
   return (
     <div id="modal" className={showModalState}>
-      <div className="label">Add item to list</div>
-      <input
-        className="textInput"
-        type="text"
-        placeholder="Type the text here..."
-        value={inputValue}
-        onChange={handleChange}
-      />
-      <div className="buttonsRow">
-        <Button type={ButtonTypes.ADD} onClick={handleClick}>
-          {" "}
-          ADD{" "}
-        </Button>
-        <Button type={ButtonTypes.CLOSEMODAL} onClick={handleClick}>
-          {" "}
-          CANCEL{" "}
-        </Button>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="text-input-id" className="label">
+          Add item to list
+        </label>
+        <input
+          id="text-input-id"
+          className="textInput"
+          type="text"
+          placeholder="Type the text here..."
+          value={inputValue}
+          onChange={handleChange}
+          required
+          minLength={1}
+        />
+        <div className="buttonsRow">
+          <Button type={ButtonTypes.ADD} onClick={handleClick}>
+            ADD
+          </Button>
+          <Button
+            type={ButtonTypes.CLOSEMODAL}
+            onClick={handleClick}
+            submitType={"button"}
+          >
+            CANCEL
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };

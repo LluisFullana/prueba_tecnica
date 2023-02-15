@@ -1,9 +1,18 @@
 import { IButtonProps } from "./Types";
 import "./Button.css";
 
-export const Button = ({ type, onClick, children }: IButtonProps) => {
+export const Button = ({
+  type,
+  onClick,
+  children,
+  submitType = "submit",
+}: IButtonProps) => {
   return (
-    <button className={type} onClick={() => onClick({ actionType: type })}>
+    <button
+      type={submitType}
+      className={type}
+      onClick={() => onClick({ actionType: type })}
+    >
       {children}
     </button>
   );

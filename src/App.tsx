@@ -38,9 +38,11 @@ function App() {
         break;
 
       case ButtonTypes.ADD:
-        setItems([...items, item]);
-        setLastItemsState([...lastItemsState, items]);
-        setShowModal(ModalState.CLOSED);
+        if (item.name.trim() !== "") {
+          setItems([...items, item]);
+          setLastItemsState([...lastItemsState, items]);
+          setShowModal(ModalState.CLOSED);
+        }
         break;
 
       case ButtonTypes.DELETE:
@@ -78,7 +80,11 @@ function App() {
     <div className="App">
       <>
         <Modal actionFunction={handleActions} showModalState={showModal} />
-        <div id="shadowId" className={showModal}></div>
+        <div
+          id="shadowId"
+          className={showModal}
+          onClick={() => handleActions({ actionType: ButtonTypes.CLOSEMODAL })}
+        ></div>
         <Selector items={items} actionFunction={handleActions} />
       </>
     </div>
