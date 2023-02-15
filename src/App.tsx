@@ -8,7 +8,7 @@ import {
   ModalState,
 } from "./interfaces/Interfaces";
 import "./App.css";
-import { deleteItems, selectItemHelper } from "./ActionHelpers";
+import { deleteItems } from "./ActionHelpers";
 
 function App() {
   const initialState = [
@@ -62,8 +62,12 @@ function App() {
         break;
 
       case ButtonAction.SELECTITEM:
-        let temporalSelectedItems = selectItemHelper(selectedItems, item);
-        if (temporalSelectedItems) {
+        let index = selectedItems.findIndex(
+          (selectedItem) => selectedItem.id == item.id
+        );
+        if (index > -1) {
+          let temporalSelectedItems = selectedItems;
+          temporalSelectedItems.splice(index, 1);
           setSelectedItems(temporalSelectedItems);
         } else {
           setSelectedItems([...selectedItems, item]);

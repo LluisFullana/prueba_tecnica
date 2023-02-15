@@ -17,7 +17,7 @@ export const Modal = ({ actionFunction, showModalState }: IModalProps) => {
 
   useEffect(() => {
     setInputValue("");
-  }, [itemId]);
+  }, [itemId, showModalState]);
 
   const handleClick = (clickProps: IClickProps) => {
     actionFunction({

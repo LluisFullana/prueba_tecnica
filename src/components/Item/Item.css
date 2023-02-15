@@ -21,8 +21,14 @@
   padding-left: 15px;
   background-color: var(--mainColor);
   color: #ffffff;
+  cursor: pointer;
 }
 
 .item:hover {
+  border: 1px solid var(--mainColor);
+  color: var(--mainColor);
+}
+
+.selectedItem:hover {
   border: 1px solid var(--mainColor);
 }
